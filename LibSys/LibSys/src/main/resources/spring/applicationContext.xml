@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--配置service层-->
+    <context:component-scan base-package="service"/>
+    <context:component-scan base-package="dao"/>
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/ssmdemo?characterEncoding=UTF-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="jmh181949"/>
+    </bean>
+
+    <!-- SqlsessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- mybatis配置文件 -->
+        <property name="configLocation" value="classpath:spring-mybatis.xml"/>
+        <!--        mapper配置文件-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 配置扫描包的路径
+        如果要扫描多个包，中间使用半角逗号分隔
+        要求mapper.xml和mapper.java同名且在同一个目录
+         -->
+        <property name="basePackage" value="dao"/>
+        <!-- 使用sqlSessionFactoryBeanName -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+</beans>
