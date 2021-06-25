@@ -1,0 +1,122 @@
+
+body {
+    background-image:url(../image/bg.jpg);
+}
+
+#logo{
+    margin-top:40;
+    text-align: center;
+    /* float:right; */
+}
+
+#title{
+    /* text-align: justify; */
+    font-weight:normal;
+    font-size: 40;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    /* border: 2px solid lightblue; */
+    /* border-radius: 16px; */
+    /* border-width: 3; */
+    /* width: 200; */
+    margin: 30;
+    color:aliceblue;
+}
+
+
+div.form {
+    position: relative;
+    border:2px solid lightblue;
+    border-radius: 16px;
+    border-width: 3;
+    max-width: 600;
+    height: 360;
+    text-align: center;
+    margin: auto;
+    margin-top: 20;
+}
+
+label {
+    font-size: larger;
+    color:antiquewhite;
+    /* position: absolute; */
+    left: 50;
+
+}
+
+#form {
+    margin-top: 15;
+}
+
+input[type=text], select{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 16px;
+
+    /* margin: 40px 10px; */
+    font-size: large;
+    width: 50%;
+    padding: 8px 20px;
+    display: inline-block;
+    border: 2px solid rgb(173, 172, 172);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    margin-left: 16px;
+    margin-bottom: 20;
+    font-size: large;
+    width: 50%;
+    padding: 8px 20px;
+    display: inline-block;
+    border: 2px solid rgb(173, 172, 172);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+input[type=text]:hover {
+    background-color:rgb(227, 235, 241);
+}
+
+input[type=password]:hover {
+    background-color:rgb(227, 235, 241);
+}
+
+input[type=button] {
+
+    width: 12%;
+    /* height: 30%; */
+    background-color:aliceblue;
+    color: black;
+    padding: 10px 10px;
+    /* margin: 20px px; */
+    margin-top: 20px;
+    margin-left: 45px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+input[type=button]:hover {
+    background-color: rgb(0, 190, 230);
+    color: aliceblue;
+}
+
+input[type=file] {
+    padding: 3px 5px;
+    /* margin: 20px px; */
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 17px;
+}
+
+#tip{
+
+    color: red;
+    visibility:hidden;
+    margin-top:10px;
+    margin-left: 40px;
+}

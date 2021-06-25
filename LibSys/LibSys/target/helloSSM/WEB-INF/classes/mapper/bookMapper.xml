@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BookDao">
+
+    <!-- 问题：为什么test里面必须使用 ‘_parameter’？-->
+    <select id="searchBookByName" parameterType="String" resultType="pojo.Book">
+        SELECT * FROM book WHERE 0 = 1
+        <if test="_parameter != ''" >
+        OR bookName LIKE concat('%', #{0}, '%')
+        </if>
+    </select>
+
+    <select id="searchAllBook" resultType="pojo.Book">
+        SELECT * FROM book;
+    </select>
+
+    <select id="searchBook" parameterType="String" resultType="pojo.Book">
+        SELECT * FROM book WHERE bookName = #{bkName};
+    </select>
+
+    <select id="searchBookByAuthor" parameterType="String" resultType="pojo.Book">
+        SELECT * FROM book WHERE author = #{author};
+    </select>
+
+    <select id="searchBookByType" parameterType="String" resultType="pojo.Book">
+        SELECT * FROM book WHERE type = #{type};
+    </select>
+
+    <select id="getBookIdByName" parameterType="String" resultType="int">
+        SELECT bookId FROM book WHERE bookName = #{bkName};
+    </select>
+
+    <update id="updateBook" parameterType="pojo.Book">
+        UPDATE book SET bookName = #{bookName},
+                        author = #{author},
+                        totalQuantity = #{totalQuantity},
+                        remQuantity = #{remQuantity},
+                        type = #{type}
+        WHERE bookId = #{bookId};
+    </update>
+
+    <insert id="addBook" parameterType="pojo.Book">
+        INSERT INTO book(bookName, author, totalQuantity, remQuantity, type)
+        VALUES(#{bookName}, #{author}, #{totalQuantity}, #{remQuantity}, #{type});
+    </insert>
+
+    <delete id="deleteBook" parameterType="String">
+        DELETE FROM book WHERE bookName = #{bookName};
+    </delete>
+
+</mapper>
+

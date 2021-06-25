@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BookTypeDao">
+    <select id="getAllBookTypes" resultType="pojo.BookType">
+        SELECT * FROM book_type;
+    </select>
+
+    <select id="getTypeCount" resultType="int">
+        SELECT COUNT(*) FROM book_type;;
+    </select>
+
+    <select id="getBookTypeById" resultType="pojo.BookType">
+        SELECT * FROM book_type WHERE id = #{id};
+    </select>
+
+    <update id="updateBookType" parameterType="pojo.BookType">
+        UPDATE book_type SET type = #{type} WHERE id = #{id};
+    </update>
+
+    <update id="updateBookTypeQuantity" parameterType="pojo.BookType">
+        UPDATE book_type SET quantity = #{quantity}
+        WHERE type = #{type};
+    </update>
+
+    <insert id="addBookType" parameterType="pojo.BookType">
+        INSERT INTO book_type (type, quantity) VALUES (#{type}, #{quantity});
+    </insert>
+
+    <delete id="deleteBookType" parameterType="int">
+        DELETE FROM book_type WHERE id = #{id};
+    </delete>
+</mapper>
+
