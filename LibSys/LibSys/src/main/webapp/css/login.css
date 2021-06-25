@@ -1,0 +1,109 @@
+body{
+    background-color: linen;
+    /* opacity: 0.5; */
+    /* background-color */
+    background-image:url(../image/bg.jpg);
+    /* background-image: url(../resource/logo.png); */
+    /* background-repeat */
+    /* background-attachment */
+    /* background-position:right; */
+}
+
+#logo{
+    margin-top:40;
+    text-align: center;
+    /* float:right; */
+}
+
+#title{
+    /* text-align: justify; */
+    font-weight:normal;
+    font-size: 40;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    /* border: 2px solid lightblue; */
+    /* border-radius: 16px; */
+    /* border-width: 3; */
+    /* width: 200; */
+    margin: 30;
+    color:aliceblue;
+}
+
+div.form{
+    border:2px solid lightblue;
+    border-radius: 16px;
+    border-width: 3;
+    max-width: 600;
+    height: 300;
+    text-align: center;
+    margin: auto;
+    margin-top: 50;
+    position: relative;
+}
+
+label {
+    font-size: larger;
+    color:aliceblue;
+}
+
+input[type=text] {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    margin-left: 16px;
+
+    /* margin: 40px 10px; */
+    font-size: large;
+    width: 50%;
+    padding: 8px 20px;
+    display: inline-block;
+    border: 2px solid rgb(173, 172, 172);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    margin-left: 16px;
+    font-size: large;
+    width: 50%;
+    padding: 8px 20px;
+    display: inline-block;
+    border: 2px solid rgb(173, 172, 172);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+input[type=text]:hover {
+    background-color:rgb(252, 246, 240);
+}
+
+input[type=password]:hover {
+    background-color:rgb(252, 246, 240);
+}
+
+input[type=button] {
+    width: 12%;
+    /* height: 30%; */
+    background-color:aliceblue;
+    color: black;
+    padding: 10px 10px;
+    /* margin: 20px px; */
+    margin-top: 30px;
+    margin-left: 45px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+input[type=button]:hover {
+    background-color: rgb(0, 190, 230);
+    color: aliceblue;
+}
+
+#tip{
+    color: red;
+    visibility:hidden;
+    margin-top:15px;
+    margin-left: 40px;
+}

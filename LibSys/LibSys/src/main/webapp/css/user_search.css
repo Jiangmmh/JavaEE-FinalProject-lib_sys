@@ -1,0 +1,28 @@
+form.user-search-box{
+    text-align: center;
+}
+
+input[type="text"]{
+    outline-style: none;
+    margin-top: 100;
+    padding: 20 30;
+    width: 600px;
+    height: 40px;
+    border: solid 1px rgb(62, 164, 204);
+    border-radius: 20px;
+    font-size: large;
+}
+
+select{
+    width: 80px;
+    padding: 0 4;
+    height: 35px;
+    border: solid 1px rgb(62, 164, 204);
+    border-radius: 15px;
+    font-size: medium;
+}
+
+img.logo {
+    margin-left: 42%;
+    margin-top: 160;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+    <select id="findUserByName" parameterType="String" resultType="pojo.User">
+        SELECT * FROM user WHERE userName = #{userName}
+    </select>
+
+    <select id="selectBorrowInfoByUserId" parameterType="int" resultType="pojo.SelectBorrowInfoByUserId">
+        SELECT bookName, author, type, borrowDate, returnDate, isOverDue
+        FROM book, borrow_info
+        WHERE book.bookId = borrow_info.bookId
+            AND userId = #{userId};
+    </select>
+
+    <insert id="addUser" parameterType="pojo.User">
+        INSERT INTO user(userName, password, identity) VALUES(#{userName}, #{passWord}, "user");
+    </insert>
+
+    <update id="updateUser" parameterType="pojo.User">
+        UPDATE user SET password = #{passWord} WHERE userName = #{userName};
+    </update>
+
+    <delete id="deleteUserByName" parameterType="String">
+        DELETE FROM USER WHERE userName = #{userName};
+    </delete>
+</mapper>
